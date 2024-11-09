@@ -1,0 +1,358 @@
+body.wallet {
+    background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(19, 17, 17) 15%, rgb(0, 0, 0) 75%);
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.header a {
+    color: #ffffff;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.balance-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.balance-header {
+    color: #4CAF50;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.balance-amount {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+/* Update the points display styles */
+#points {
+    color: #D4AF37; /* Golden color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    font-family: 'Georgia', serif;
+    font-weight: normal; /* Remove bold */
+}
+
+.coin-label {
+    font-size: 1rem;
+    color: #888;
+    margin-left: 5px;
+}
+
+.usdt-equivalent {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.usdt-equivalent span {
+    color: #4CAF50;
+}
+
+.withdraw-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.withdraw-button {
+    background: linear-gradient(45deg, #FFD700, #FFC800);
+    color: #000000;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    max-width: 300px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+    height: 56px; /* Fixed height for better proportion */
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    /* 3D Effect */
+    box-shadow: 
+        0 2px 4px rgba(255, 215, 0, 0.2),
+        0 4px 8px rgba(255, 215, 0, 0.2),
+        0 8px 16px rgba(255, 215, 0, 0.2),
+        inset 0 2px 3px rgba(255, 255, 255, 0.3),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.2);
+    
+    /* Gradient border */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.withdraw-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.1)
+    );
+    border-radius: 12px 12px 0 0;
+}
+
+.withdraw-button:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+        0 4px 8px rgba(255, 215, 0, 0.3),
+        0 8px 16px rgba(255, 215, 0, 0.3),
+        0 16px 24px rgba(255, 215, 0, 0.3),
+        inset 0 2px 3px rgba(255, 255, 255, 0.4),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #FFC800, #FFD700);
+}
+
+.withdraw-button:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 
+        0 2px 4px rgba(255, 215, 0, 0.2),
+        0 4px 8px rgba(255, 215, 0, 0.2),
+        inset 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Add text shadow for better contrast */
+.withdraw-button span {
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.3px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .withdraw-button {
+        height: 50px;
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+.min-withdraw {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.transactions-section {
+    padding: 20px;
+}
+
+.transactions-section h3 {
+    margin-bottom: 15px;
+}
+
+.transactions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-content h3 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.usdt-preview {
+    color: #888;
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.usdt-preview span {
+    color: #4CAF50;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.modal-buttons button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.confirm-btn {
+    background: #FFD700;
+    color: #000000;
+}
+
+/* Transaction Item Styles */
+.transaction-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transaction-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.transaction-date {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.transaction-amount {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.transaction-status {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+}
+
+.status-pending {
+    background: rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+}
+
+.status-completed {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+}
+
+.status-failed {
+    background: rgba(244, 67, 54, 0.2);
+    color: #f44336;
+}
+
+/* Add these styles */
+.no-transactions {
+    text-align: center;
+    color: #888;
+    padding: 20px;
+}
+
+.transaction-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transaction-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.transaction-date {
+    color: #888;
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+
+.transaction-amount {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.transaction-status {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+}
+
+.status-pending {
+    background: rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+}
+
+.status-completed {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+}
+
+.status-failed {
+    background: rgba(244, 67, 54, 0.2);
+    color: #f44336;
+}
+
+.usdt-equivalent::after,
+.usdt-preview::after {
+    content: " USDT";
+    color: #4CAF50;
+}

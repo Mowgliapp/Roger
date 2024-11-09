@@ -1,0 +1,82 @@
+.earn {
+    padding-bottom: 100px;
+}
+
+.haeder {
+    margin-bottom: 30px;
+}
+
+.earn-more {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.earn-more h3 {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #FFD700;
+}
+
+.boosters {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
+}
+
+.boosters-button {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.3s;
+}
+
+.boosters-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.boosters-button-img {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.boosters-button-text {
+    flex: 1;
+}
+
+.boosters-button-text h4 {
+    margin-bottom: 5px;
+}
+
+.boosters-button-data {
+    display: flex;
+    align-items: center;
+}
+
+.m-r-25 {
+    margin-right: 25px;
+}
+
+.completed {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.completed-badge {
+    background: #4CAF50;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-left: 10px;
+} 

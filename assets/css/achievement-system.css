@@ -1,0 +1,121 @@
+.achievements-container {
+    padding: 20px;
+}
+
+.achievements-category {
+    margin-bottom: 30px;
+}
+
+.achievements-category h3 {
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.achievement-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    gap: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.achievement-card.locked {
+    opacity: 0.6;
+}
+
+.achievement-card.unlocked {
+    background: rgba(76, 175, 80, 0.2);
+}
+
+.achievement-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.achievement-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.achievement-info {
+    flex: 1;
+}
+
+.achievement-info h4 {
+    margin-bottom: 5px;
+    color: #FFD700;
+}
+
+.achievement-info p {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.achievement-info button {
+    background: #FFD700;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.achievement-info button:hover {
+    background: #ccac00;
+}
+
+.achievement-unlock-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.achievement-unlock-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    animation: slideUp 0.3s ease;
+}
+
+.achievement-name {
+    font-size: 24px;
+    color: #FFD700;
+    margin: 15px 0;
+}
+
+.achievement-reward {
+    font-size: 18px;
+    color: #4CAF50;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+} 

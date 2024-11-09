@@ -1,0 +1,161 @@
+.admin {
+    background: #1a1a1a;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+}
+
+.admin-header h1 {
+    margin: 0;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-header i {
+    color: #FFD700;
+}
+
+.admin-controls {
+    display: flex;
+    gap: 15px;
+}
+
+#statusFilter {
+    padding: 8px 15px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.refresh-button {
+    padding: 8px 15px;
+    border-radius: 8px;
+    background: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.refresh-button:hover {
+    background: #45a049;
+}
+
+.orders-list {
+    display: grid;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.order-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+}
+
+.order-info {
+    display: grid;
+    gap: 10px;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-id {
+    font-size: 14px;
+    color: #999;
+}
+
+.order-status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.status-pending {
+    background: #FFA500;
+    color: black;
+}
+
+.status-completed {
+    background: #4CAF50;
+    color: white;
+}
+
+.status-cancelled {
+    background: #f44336;
+    color: white;
+}
+
+.order-details {
+    display: grid;
+    gap: 5px;
+}
+
+.order-detail {
+    display: flex;
+    gap: 10px;
+}
+
+.detail-label {
+    color: #999;
+    min-width: 120px;
+}
+
+.order-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-button {
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.approve-button {
+    background: #4CAF50;
+    color: white;
+}
+
+.approve-button:hover {
+    background: #45a049;
+}
+
+.cancel-button {
+    background: #f44336;
+    color: white;
+}
+
+.cancel-button:hover {
+    background: #d32f2f;
+}
