@@ -1,0 +1,29 @@
+.statistics-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+}
+
+h2 {
+    color: #FFD700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 16px;
+}
+
+.stat-item span {
+    color: #fff;
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+} 

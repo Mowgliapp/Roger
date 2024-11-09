@@ -1,0 +1,525 @@
+/* Base container */
+.wallet-page {
+    background: radial-gradient(circle at top, rgb(22, 20, 20) 0%, rgb(15, 13, 13) 50%, rgb(0, 0, 0) 100%);
+    min-height: 100vh;
+    color: white;
+    padding: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Header - Enhanced */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 100;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    background: linear-gradient(45deg, #fff, #ccc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Main container */
+.wallet-container {
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 75px 15px 15px;
+}
+
+/* Wallet Icon & Title */
+.wallet-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 15px 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    margin: 20px auto;
+    width: fit-content;
+    min-width: 160px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wallet-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.wallet-icon:active {
+    transform: translateY(0);
+}
+
+.wallet-icon i {
+    font-size: 1.5rem;
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.wallet-icon span {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.wallet-connected {
+    background: linear-gradient(45deg, rgba(76, 175, 80, 0.1), rgba(46, 125, 50, 0.1));
+    border-color: rgba(76, 175, 80, 0.2);
+}
+
+/* Features List - Enhanced */
+.features-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-item i {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Swap Section - Enhanced */
+.swap-container {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.swap-item {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 12px;
+    margin: 8px 0;
+    transition: all 0.3s ease;
+}
+
+.swap-item:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Token Selection - Enhanced */
+.token-select {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.token-select:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.token-select img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Exchange Section - Enhanced */
+.exchanges-section {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.exchange-btn {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.exchange-btn:hover {
+    background: rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.exchange-btn img {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Coming Soon Elements */
+.coming-soon-badge {
+    background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.1));
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin: 15px 0;
+}
+
+.coming-soon-tag {
+    color: #FFD700;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Toast Notification - Enhanced */
+.toast-notification {
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.exchange-btn {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 480px) {
+    .wallet-container {
+        padding-top: 65px;
+    }
+
+    .feature-item {
+        padding: 12px;
+    }
+
+    .swap-container {
+        padding: 12px;
+    }
+
+    .exchanges-section {
+        padding: 12px;
+    }
+}
+
+/* Add these to your existing CSS */
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); filter: brightness(1.2); }
+    100% { transform: scale(1); }
+}
+
+.glow-effect {
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover,
+.exchange-btn:hover,
+.token-select:hover {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.swap-arrow:hover {
+    animation: bounce 0.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Add these new styles for exchanges */
+.exchanges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    padding: 15px;
+}
+
+.exchange-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.exchange-icon {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.exchange-icon img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.icon-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, 
+        rgba(255, 215, 0, 0.15),
+        transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.exchange-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.coming-soon-tag {
+    font-size: 0.75rem;
+    color: #FFD700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.8;
+}
+
+/* Hover effects */
+.exchange-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 215, 0, 0.2);
+}
+
+.exchange-btn:hover .exchange-icon {
+    transform: scale(1.1);
+}
+
+.exchange-btn:hover .icon-glow {
+    opacity: 1;
+}
+
+/* Active state */
+.exchange-btn:active {
+    transform: scale(0.97);
+}
+
+/* Disabled state */
+.exchange-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Animation for new exchanges */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.exchange-btn {
+    animation: fadeInScale 0.3s ease-out forwards;
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+    .exchanges-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .exchange-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .exchange-icon img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .exchange-name {
+        font-size: 0.8rem;
+    }
+}
+
+/* Add these wallet connection styles */
+.wallet-connected {
+    background: linear-gradient(45deg, rgba(76, 175, 80, 0.1), rgba(46, 125, 50, 0.1));
+    border-color: rgba(76, 175, 80, 0.2);
+}
+
+.wallet-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.wallet-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.wallet-icon span {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.wallet-icon i {
+    font-size: 1.2rem;
+    color: #FFD700;
+}
+
+/* Animation for connection status */
+@keyframes connectPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+}
+
+.wallet-connected .wallet-icon {
+    animation: connectPulse 2s infinite;
+}
+
+.wallet-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+    padding: 15px;
+}
+
+.wallet-option {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wallet-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.wallet-option img {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+}
+
+.wallet-option span {
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+}
+
+.wallet-option.connected {
+    background: linear-gradient(45deg, rgba(76, 175, 80, 0.1), rgba(46, 125, 50, 0.1));
+    border-color: rgba(76, 175, 80, 0.2);
+}
+
+.wallet-option .coming-soon-tag {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    color: #FFD700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.8;
+}
+
+.wallet-option {
+    position: relative;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.wallet-option:hover {
+    transform: none;
+    background: rgba(255, 255, 255, 0.05);
+}

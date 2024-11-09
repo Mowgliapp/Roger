@@ -1,0 +1,224 @@
+.daily-rewards-container {
+    padding: 20px;
+}
+
+.streak-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.current-streak {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.max-streak {
+    color: #FFD700;
+}
+
+.rewards-calendar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.reward-day {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.reward-day:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.reward-day.claimed {
+    background: rgba(76, 175, 80, 0.2);
+}
+
+.reward-day.today {
+    border: 2px solid #FFD700;
+    animation: pulse 2s infinite;
+}
+
+.day-number {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+.reward-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.reward-coins {
+    color: #FFD700;
+}
+
+.reward-energy {
+    color: #2196F3;
+}
+
+.reward-powerups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.powerup-preview {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.powerup-preview img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.claimed-mark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+#claim-daily-reward {
+    width: 100%;
+    padding: 15px;
+    background: #4CAF50;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+#claim-daily-reward:hover {
+    background: #45a049;
+}
+
+#claim-daily-reward:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+#claim-daily-reward.available {
+    animation: glow 2s infinite;
+}
+
+.pulse-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    animation: pulse-ring 2s infinite;
+}
+
+/* Daily Reward Claim Animation */
+.daily-reward-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.daily-reward-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    animation: dropDown 0.5s ease;
+}
+
+.streak-counter {
+    font-size: 24px;
+    color: #FFD700;
+    margin: 15px 0;
+}
+
+.streak-bonus {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #FFD700;
+}
+
+.streak-bonus.complete {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #4CAF50; }
+    50% { box-shadow: 0 0 20px #4CAF50; }
+    100% { box-shadow: 0 0 5px #4CAF50; }
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    50% { transform: scale(1); opacity: 0.3; }
+    100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+@keyframes dropDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+} 
