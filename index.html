@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Mowgli</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <meta name="theme-color" content="#f19e36" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon/favicon.ico">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script async src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+    <script async src="https://tg.dev/js/tgads.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="squad-container">
+        <div class="login">
+            <div class="login-detail">
+                <div class="profile">
+                    <span>
+                        <div id="profilePlaceholder" style="width: 100%; height: 100%; border-radius: 50%; background-color: #E1E1E1; display: flex; justify-content: center; align-items: center; font-size: 16px; color: #ffffff; background: linear-gradient(135deg, #8774E1, #7C66DC);"></div>
+                        <script>
+                            if (window.Telegram && window.Telegram.WebApp) {
+                                const user = window.Telegram.WebApp.initDataUnsafe.user;
+                                if (user && user.photo_url) {
+                                    const img = document.createElement('img');
+                                    img.src = user.photo_url;
+                                    img.style = "width: 100%; height: 100%; border-radius: 50%; object-fit: cover;";
+                                    document.querySelector('#profilePlaceholder').replaceWith(img);
+                                }
+                            }
+                        </script>
+                    </span>
+                </div>
+                <div class="user-data">
+                    <span class="name"></span>
+                    <span class="user-rank"></span>
+                </div>
+            </div>
+            <div class="welcome-message">
+                <span id="username">User</span>!
+            </div>
+        
+            <script src="https://telegram.org/js/telegram-web-app.js"></script> <!-- Telegram Web App SDK -->
+            
+            <script>
+                // Initialize the Telegram Web App
+                Telegram.WebApp.ready();
+        
+                // Get user data
+                const user = Telegram.WebApp.initDataUnsafe.user;
+                const usernameDisplay = document.getElementById('username');
+                
+                if (user && user.username) {
+                    // Display the username
+                    usernameDisplay.innerText = ` ${user.username}!`;
+                } else {
+                    usernameDisplay.innerText = `Guest!`;
+                }
+            </script>
+            <div>
+                <a href="login.html">
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 8C3 6.11438 3 5.17157 3.58579 4.58579C4.17157 4 5.11438 4 7 4H12H17C18.8856 4 19.8284 4 20.4142 4.58579C21 5.17157 21 6.11438 21 8V16C21 17.8856 21 18.8284 20.4142 19.4142C19.8284 20 18.8856 20 17 20H12H7C5.11438 20 4.17157 20 3.58579 19.4142C3 18.8284 3 17.8856 3 16V8Z" stroke="#ffffff" stroke-width="1.5"/>
+                        <path d="M21 8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8" stroke="#ffffff" stroke-width="1.5"/>
+                        <path d="M14 13H21V17H14C12.8954 17 12 16.1046 12 15C12 13.8954 12.8954 13 14 13Z" stroke="#ffffff" stroke-width="1.5"/>
+                        <circle cx="14" cy="15" r="1" fill="#ffffff"/>
+                        <path d="M6 12H9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="points-container">
+        <div class="points-label">Coins</div>
+        <div class="points-display">
+            <span id="points">0</span>
+        </div>
+    </div>
+
+    <div id="coin" class="click-area">
+        <img src="assets/images/mogli.png" alt="mogli" class="main-character">
+    </div>
+
+    <div class="menu-container">
+        <div class="power">
+            <img src="./assets/images/28.png" width="40px" alt="Energy">
+            <div class="power-wrapper">
+                <div class="power-count">
+                    <span id="energy">100</span>
+                    <span class="gray">/100</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-bottuns">
+            <a href="frens.html" class="button b-r">
+                <img src="./assets/images/1.png" alt="" width="28px">
+                <span class="select-none">friends</span>
+            </a>
+            <a href="./tasks.html" class="button b-r">
+                <img src="./assets/images/2.png" alt="Tasks" width="28px">
+                <span class="select-none">Tasks</span>
+            </a>
+            <a href="wallet.html" class="button">
+                <img src="./assets/images/3.png" alt="Wallet" width="28">
+                <span class="select-none">Wallet</span>
+            </a>
+        </div>
+    </div>
+
+  
+<button class="reward-btn" onclick="handleAdgramAd()">
+    <i class="fas fa-play-circle"></i>
+    Watch & Earn 1000 Coins
+</button>
+
+    <div id="adContainer" style="display: none;"></div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script type="module" src="./src/config/firebase.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
+        import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDhXhdgccrG0fBfA4E7UEeRhjr4rxIq_oY",
+            authDomain: "mowgli-refferal-data.firebaseapp.com",
+            databaseURL: "https://mowgli-refferal-data-default-rtdb.asia-southeast1.firebasedatabase.app", 
+            projectId: "mowgli-refferal-data",
+            storageBucket: "mowgli-refferal-data.appspot.com",
+            messagingSenderId: "499110209498",
+            appId: "1:499110209498:web:9ba00de1466e07882e3",
+            measurementId: "G-L0RYHEJYXX"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        // Initialize user data
+    
+        let userRef = null;
+
+        if (user?.username) {
+            userRef = ref(db, 'users/' + user.username);
+            // Set up real-time listener for user data
+            onValue(userRef, (snapshot) => {
+                if (snapshot.exists()) {
+                    const userData = snapshot.val();
+                    updateUIFromFirebase(userData);
+                }
+            });
+        }
+
+        function updateUIFromFirebase(userData) {
+            const pointsElement = document.getElementById('points');
+            if (userData.coins) {
+                pointsElement.innerText = typeof userData.coins === 'object' ? 
+                    userData.coins.coins : userData.coins;
+                localStorage.setItem('coins', pointsElement.innerText);
+            }
+        }
+
+        async function updateCoinsInFirebase(username, newCoinValue) {
+            try {
+                await set(ref(db, 'users/' + username), {
+                    coins: newCoinValue,
+                    lastUpdated: Date.now()
+                });
+            } catch (error) {
+                console.error('Error updating coins:', error);
+            }
+        }
+
+        async function getCoinsFromFirebase(username) {
+            try {
+                const snapshot = await get(ref(db, 'users/' + username));
+                if (snapshot.exists()) {
+                    const userData = snapshot.val();
+                    return userData.coins?.coins || userData.coins || 0;
+                }
+                return 0;
+            } catch (error) {
+                console.error('Error getting coins:', error);
+                return 0;
+            }
+        }
+
+        // Create floating points animation
+        function createFloatingPoints(x, y, amount) {
+            const floatingText = document.createElement('div');
+            floatingText.className = 'floating-click';
+            floatingText.textContent = `+${amount}`;
+            floatingText.style.left = `${x}px`;
+            floatingText.style.top = `${y}px`;
+            document.body.appendChild(floatingText);
+
+            setTimeout(() => floatingText.remove(), 1000);
+        }
+
+        // Handle coin clicks with floating points
+        const coinElement = document.getElementById('coin');
+        if (coinElement) {
+            coinElement.addEventListener('click', async (e) => {
+                if (e.pointerType === 'touch') return;
+                
+                const pointsElement = document.getElementById('points');
+                let currentPoints = parseInt(pointsElement.innerText, 10);
+                let increment = 2; // Base increment value
+                
+                // Create floating points effect
+                createFloatingPoints(e.clientX, e.clientY, increment);
+                
+                // Update points
+                currentPoints += increment;
+                pointsElement.innerText = currentPoints;
+                
+                // Update Firebase if user is logged in
+                if (user?.username) {
+                    await updateCoinsInFirebase(user.username, currentPoints);
+                }
+                
+                // Update localStorage
+                localStorage.setItem('coins', currentPoints);
+            });
+
+            // Handle touch events separately
+            let touchTimeout;
+            let touchCount = 0;
+            
+            coinElement.addEventListener('touchstart', async (e) => {
+                e.preventDefault();
+                
+                clearTimeout(touchTimeout);
+                touchCount++;
+                
+                const touch = e.touches[0];
+                const pointsElement = document.getElementById('points');
+                let currentPoints = parseInt(pointsElement.innerText, 10);
+                let increment = 2 * touchCount; // Multiply increment by touch count
+                
+                // Create floating points effect
+                createFloatingPoints(touch.clientX, touch.clientY, increment);
+                
+                // Update points
+                currentPoints += increment;
+                pointsElement.innerText = currentPoints;
+                
+                // Update Firebase if user is logged in
+                if (user?.username) {
+                    await updateCoinsInFirebase(user.username, currentPoints);
+                }
+                
+                // Update localStorage
+                localStorage.setItem('coins', currentPoints);
+                
+                // Reset touch count after delay
+                touchTimeout = setTimeout(() => {
+                    touchCount = 0;
+                }, 1000);
+            }, { passive: false });
+        }
+
+        // Initialize points display from localStorage or Firebase
+        async function initializePoints() {
+            if (user?.username) {
+                const firebaseCoins = await getCoinsFromFirebase(user.username);
+                const localCoins = parseInt(localStorage.getItem('coins')) || 0;
+                const finalCoins = Math.max(firebaseCoins, localCoins);
+                
+                document.getElementById('points').innerText = finalCoins;
+                localStorage.setItem('coins', finalCoins);
+            } else {
+                const localCoins = parseInt(localStorage.getItem('coins')) || 0;
+                document.getElementById('points').innerText = localCoins;
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initializePoints);
+    </script>
+
+    <script>
+        window.googletag = window.googletag || {cmd: []};
+        googletag.cmd.push(function() {
+            googletag.defineSlot('/your-ad-unit-id', [320, 50], 'banner-ad')
+                .addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+</body>
+</html>

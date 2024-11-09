@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mowgli - Tasks</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/tasks.css">
+    <meta name="theme-color" content="#f19e36" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon/favicon.ico">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script async src="https://telegram.org/js/games.js"></script>
+</head>
+<head>
+    <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
+    <script src="https://adgram.io/sdk/loader.js"></script>
+</head>
+<body class="tasks">
+    <div class="header">
+        <a href="index.html">
+            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 11.9299H2" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.00009 19L2.84009 14C2.5677 13.7429 2.35071 13.433 2.20239 13.0891C2.05407 12.7452 1.97754 12.3745 1.97754 12C1.97754 11.6255 2.05407 11.2548 2.20239 10.9109C2.35071 10.567 2.5677 10.2571 2.84009 10L8.00009 5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        <h2>Tasks</h2>
+    </div>
+
+    <div class="tasks-container">
+        <div class="top-button-section">
+            <div class="task-header-container">
+                <button class="claim-all-button">
+                    <span class="button-text">Claim Rewards</span>
+                    <span class="reward-amount">+</span>
+                </button>
+                <div class="task-points-container">
+                    <img src="assets/images/coin.gif" width="20" height="20" alt="coins">
+                    <span id="task-points">0</span>
+                </div>
+            </div>
+            <div class="vip-button-container">
+                <button class="vip-upgrade-button" onclick="showVIPOptions()">
+                    <i class="fas fa-crown"></i>
+                    <span>Upgrade to VIP</span>
+                    <div class="vip-benefits">2x Rewards</div>
+                </button>
+            </div>
+        </div>
+
+        <div class="tasks-section">
+            <h3>Daily Tasks</h3>
+            <div id="daily-tasks" class="tasks-list">
+                <button class="task-button" data-task-type="daily">
+                    <div class="task-button-content">
+                        <div class="task-button-info">
+                            <div class="task-button-title">Daily Tasks</div>
+                            <div class="task-button-description">Complete daily tasks to earn rewards</div>
+                        </div>
+                        <div class="task-button-reward">
+                            <span class="reward-amount">+700</span>
+                            <img src="assets/images/coin.gif" width="20" height="20" alt="coins">
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+         <div class="tasks-section">
+            <h3>Social Tasks</h3>
+            <div id="social-tasks" class="tasks-list">
+                <button class="task-button" data-task-type="social">
+                    <div class="task-button-content">
+                        <div class="task-button-info">
+                            <div class="task-button-title">Social Tasks</div>
+                            <div class="task-button-description">Complete social tasks to earn rewards</div>
+                        </div>
+                        <div class="task-button-reward">
+                            <span class="reward-amount">+1500</span>
+                            <img src="assets/images/coin.gif" width="20" height="20" alt="coins">
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    
+        <div class="tasks-section">
+            <h3>Achievements</h3>
+            <div id="achievement-tasks" class="tasks-list">
+            <button class="task-button" data-task-type="achievement">
+                <div class="task-button-content">
+                    <div class="task-button-info">
+                        <div class="task-button-title">Achievement Tasks</div>
+                        <div class="task-button-description">Complete achievements to earn big rewards</div>
+                    </div>
+                    <div class="task-button-reward">
+                        <span class="reward-amount">+1800</span>
+                        <img src="assets/images/coin.gif" width="20" height="20" alt="coins">
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <script type="module" src="./src/pages/tasks.js"></script>
+</body>
+</html> 

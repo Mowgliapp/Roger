@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mowgli Admin - VIP Management</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="admin">
+    <div class="admin-header">
+        <h1><i class="fas fa-crown"></i> VIP Management</h1>
+        <div class="admin-controls">
+            <select id="statusFilter">
+                <option value="all">All Orders</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+            <button id="refreshButton" class="refresh-button">
+                <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+        </div>
+    </div>
+
+    <div class="admin-container">
+        <div class="orders-list" id="ordersList">
+            <!-- Orders will be populated here -->
+        </div>
+    </div>
+
+    <script type="module" src="./src/pages/admin.js"></script>
+</body>
+</html>

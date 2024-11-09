@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet - Mowgli</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/wallet.css">
+    <meta name="theme-color" content="#f19e36" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon/favicon.ico">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body class="wallet">
+    <div class="header">
+        <a href="index.html">
+            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 11.9299H2" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.00009 19L2.84009 14C2.5677 13.7429 2.35071 13.433 2.20239 13.0891C2.05407 12.7452 1.97754 12.3745 1.97754 12C1.97754 11.6255 2.05407 11.2548 2.20239 10.9109C2.35071 10.567 2.5677 10.2571 2.84009 10L8.00009 5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        <h2>Wallet</h2>
+    </div>
+
+    <div class="balance-card">
+        <div class="balance-header">Available Balance</div>
+        <div class="balance-amount">
+            <span id="points">0</span>
+            <span class="coin-label">COINS</span>
+        </div>
+        <div class="usdt-equivalent">≈ <span id="usdtAmount">0.00</span></div>
+    </div>
+
+    <div class="withdraw-section">
+        <button id="withdrawBtn" class="withdraw-button">
+            Withdraw to Wallet
+        </button>
+        <div class="min-withdraw">
+            Minimum withdrawal: 500 COINS
+        </div>
+    </div>
+
+    <div class="transactions-section">
+        <h3>Transaction History</h3>
+        <div id="history-list" class="transactions-list">
+            <!-- History items will be added here dynamically -->
+        </div>
+    </div>
+
+    <!-- Withdrawal Modal -->
+    <div id="withdrawModal" class="modal">
+        <div class="modal-content">
+            <h3>Withdraw Coins</h3>
+            <form id="withdraw-form">
+                <div class="input-group">
+                    <input type="number" 
+                           id="withdraw-amount" 
+                           min="1000" 
+                           step="1000" 
+                           placeholder="Enter amount"
+                           required>
+                    <div class="usdt-preview">≈ <span id="previewUsdt">0.00</span></div>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" id="cancelWithdraw" class="cancel-btn">Cancel</button>
+                    <button type="submit" id="confirmWithdraw" class="confirm-btn">Confirm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="./src/config/firebase.js"></script>
+    <script type="module" src="./assets/js/wallet.js"></script>
+</body>
+</html>

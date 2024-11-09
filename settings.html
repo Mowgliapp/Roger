@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mowgli - Settings</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/settings.css">
+</head>
+<body>
+    <div class="settings-container">
+        <div class="settings-section">
+            <h2>Sound</h2>
+            <div class="setting-item">
+                <label>Sound Effects</label>
+                <label class="switch">
+                    <input type="checkbox" id="sound-effects">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>Volume</label>
+                <input type="range" id="volume-slider" min="0" max="100" value="50">
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <h2>Notifications</h2>
+            <div class="setting-item">
+                <label>Achievement Alerts</label>
+                <label class="switch">
+                    <input type="checkbox" id="achievement-notifications">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>Daily Reminders</label>
+                <label class="switch">
+                    <input type="checkbox" id="daily-reminders">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <h2>Gameplay</h2>
+            <div class="setting-item">
+                <label>Power Save Mode</label>
+                <label class="switch">
+                    <input type="checkbox" id="power-save">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>Reduced Animations</label>
+                <label class="switch">
+                    <input type="checkbox" id="reduced-animations">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <h2>Theme</h2>
+            <div class="setting-item">
+                <label>Dark Mode</label>
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>Color Scheme</label>
+                <select id="color-scheme">
+                    <option value="default">Default Gold</option>
+                    <option value="blue">Cool Blue</option>
+                    <option value="green">Forest Green</option>
+                    <option value="purple">Royal Purple</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="settings-actions">
+            <button id="reset-settings" class="reset-button">Reset to Default</button>
+        </div>
+    </div>
+
+    <script type="module" src="src/pages/settings.js"></script>
+</body>
+</html> 
